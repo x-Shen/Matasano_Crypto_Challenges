@@ -59,9 +59,9 @@ def get_key_length(data):
     key_length.sort(key=lambda tup: tup[1])
     return key_length
 
-#print(get_key_length(data))
+print(get_key_length(data))
 
-def transpose_blocks(blocks,block_size, pos):
+'''def transpose_blocks(blocks,block_size, pos):
     transposed = ''
     for block in blocks:
         if(len(block)==block_size):
@@ -72,7 +72,7 @@ def all_transpose(blocks, block_size):
     all_transpose = []
     for i in range(block_size):
         all_transpose.append(transpose_blocks(blocks,block_size,i))
-    return all_transpose
+    return all_transpose'''
 
 n = 29
 transposed = [data[i::n] for i in range(n)]
@@ -96,6 +96,7 @@ key_string = bytearray()
 for chuck in transposed:
     key_string.append(decrypt_all(chuck,s1q3.character_score,s1q3.char_list)[0][2])
 print(key_string)
+
 def encrypt(key,plain_text):
     def key_generator(key):
         index = 0
