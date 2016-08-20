@@ -22,8 +22,6 @@ def get_blocks(data,key_size):
         blocks.append(block)
     return blocks
 
-#print(data[0].strip())
-#print(get_blocks(data[0].strip(),16))
 
 for i in range(len(data)):
     b = get_blocks(data[i].strip(),16)
